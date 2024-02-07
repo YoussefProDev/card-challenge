@@ -13,21 +13,7 @@
     />
     <link rel="stylesheet" href="css/master.css" />
     <title>Frontend Mentor | Interactive card details form</title>
-    <div class="front">
-      <img class="card-logo" src="images/card-logo.svg" alt="">
-      <p class="card-number">0000 0000 0000 0000</p>
-      <div>
-        <span class="card-name">Youssef Ahmed</span>
-        <span class="card-expire"> 10/22</span>
-      </div>
-     
-    </div>
-    <div class="back">
-      <p class="cvc">123</p>
-    </div>
-
     
-
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
     <!-- <style>
       .attribution {
@@ -41,40 +27,103 @@
   </head>
   <body>
     <div class="container">
-      
+
+      <div class="card">
+        <!-- <div class="card-front"> -->
+                  <div class="front">
+          <div class="card-logo">
+            <img  src="images/card-logo.svg" alt="" />
+          </div>
+          
+          <p class="card-number">0000 0000 0000 0000</p>
+          <div>
+            <span class="card-name">Youssef Ahmed</span>
+            <span class="card-expire">
+              <span class="month">10</span>
+              <span>/</span>
+              <span class="year">22</span>
+            </span>
+          </div>
+        </div>
+        <!-- </div> -->
+
+        <div class="back">
+          <p class="card-cvc">123</p>
+        </div>
+      </div> 
+
+      <form>
+        <label for="fname">CARDHOLDER NAME</label>
+        <input type="text" id="fname" name="fname" class="long" maxlength="20"  data-type = "name" required />
+        <label for="number">CARD NUMBER</label>
+        <input
+          type="text"
+          inputmode="numeric"
+          id="number"
+          name="number"
+          class="long"
+          minlength="16"
+          maxlength="16"
+          required
+          data-type = "number"
+        />
+        <div class="sub-input">
+          <span class="expdate">
+            <label for="fdate">Exp. Date (MM/YY)</label>
+            <span class="month-year">
+              <input
+                type="text"
+                inputmode="numeric"
+                id="month"
+                name="fdate"
+                placeholder="MM"
+                maxlength="2"
+                minlength="2"
+                data-type = "month"
+                required
+              />
+              <input
+                type="text"
+                inputmode="numeric"
+                id="year"
+                name="fdate"
+                placeholder="YY"
+                maxlength="2"
+                minlength="2"
+                data-type = "year"
+                required
+              />
+            </span>
+          </span>
+          <span class="cvc">
+            <label for="fcvc"> CVC</label>
+            <input
+              type="text"
+              inputmode="numeric"
+              id="fcvc"
+              name="fcvc"
+              placeholder="e.g. 123"
+              minlength="3"
+              maxlength="3"
+              data-type = "cvc"
+              required
+            />
+          </span>
+          
+        </div>
+        <button type="submit" id="confirm" class="confirm dis">Confirm</button>
+      </form>
+      <div class="finish">
+        <div>
+          <img src="images/icon-complete.svg" alt="">
+        </div>
+        
+        <h2>THANK YOU!</h2>
+        <p>We've added your card details</p>
+        <button id="Continue" class="confirm">Continue</button>
+      </div>
     </div>
-  <!-- 
-    <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div> 
 
-  0000 0000 0000 0000
-  Jane Appleseed
-  00/00
-
-  000
-
-  Cardholder Name
-  e.g. Jane Appleseed
-
-  Card Number
-  e.g. 1234 5678 9123 0000
-
-  Exp. Date (MM/YY)
-  MM
-  YY
-
-  CVC
-  e.g. 123
-
-  Confirm
-
-Completed state start
-
-  Thank you!
-  We've added your card details
-  Continue  -->
-  <script src="js/script.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
